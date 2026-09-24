@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+/* 1. I-load ang Local Regular Font */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("./assets/fonts/SF-Pro-Text-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular body text */
+}
+
+/* 2. I-load ang Local Semibold (Gagawin nating kapalit ng Bold) */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("./assets/fonts/SF-Pro-Text-Semibold.ttf") format("truetype");
+  font-weight: 600; /* Semibold weight */
+}
+
+@theme {
+  /* --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto,  sans-serif; */
+  --font-sans: "SF Pro Text", "Inter", sans-serif;
+
+  --font-inter: "Inter", sans-serif;
+
+  --color-paragraph: #2e4f21;
+
+  --color-accent1: #d2f8dc;
+  --color-accent2: #506349;
+  --color-accent3: #7d9276;
+
+  --color-background01: #a0f1bd;
+  --color-background02: #f9f9f9;
+  --color-background03: #2e4f21;
+  --color-background04: #ffffff;
+  --color-background05: #f4f7f5;
+  --color-background06: #d2f8dc;
+
+  --breakpoint-tablet-custom: 800px;
+}
+
+body {
+  color: var(--color-paragraph);
+}
+
+@layer base {
+  h1 {
+    @apply tablet-custom:text-[58px] text-[40px] leading-none tracking-[-0.08em] xl:xl:text-[80px];
+  }
+
+  h2 {
+    @apply tablet-custom:text-5xl text-[32px] leading-[1.05] tracking-[-0.07em] xl:text-6xl;
+  }
+
+  h3 {
+    @apply tablet-custom:text-[34px] text-[28px] leading-[1.05] tracking-[-0.045em] xl:text-[40px];
+  }
+
+  h4 {
+    @apply tablet-custom:text-[26px] text-[22px] leading-[1.05] tracking-[-0.045em] xl:text-[30px];
+  }
+}
