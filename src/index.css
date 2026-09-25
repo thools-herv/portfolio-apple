@@ -2,17 +2,23 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("./assets/fonts/SF-Pro-Text-Light.otf") format("opentype");
+  font-weight: 300; /* Regular body text */
+}
+
 /* 1. I-load ang Local Regular Font */
 @font-face {
   font-family: "SF Pro Text";
-  src: url("./assets/fonts/SF-Pro-Text-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/SF-Pro-Text-Regular.otf") format("opentype");
   font-weight: 400; /* Regular body text */
 }
 
 /* 2. I-load ang Local Semibold (Gagawin nating kapalit ng Bold) */
 @font-face {
   font-family: "SF Pro Text";
-  src: url("./assets/fonts/SF-Pro-Text-Semibold.ttf") format("truetype");
+  src: url("./assets/fonts/SF-Pro-Text-Semibold.otf") format("opentype");
   font-weight: 600; /* Semibold weight */
 }
 
@@ -22,24 +28,28 @@
 
   --font-inter: "Inter", sans-serif;
 
-  --color-paragraph: #2e4f21;
+  --color-primary: rgb(29, 29, 31);
+  /* rgb(29, 29, 31) */
 
   --color-accent1: #d2f8dc;
   --color-accent2: #506349;
   --color-accent3: #7d9276;
 
-  --color-background01: #a0f1bd;
+  --color-background01: rgb(250, 250, 252);
   --color-background02: #f9f9f9;
   --color-background03: #2e4f21;
   --color-background04: #ffffff;
   --color-background05: #f4f7f5;
   --color-background06: #d2f8dc;
 
-  --breakpoint-tablet-custom: 800px;
+  --color-background-global: rgba(245, 245, 247);
+  /* --color-background-global: rgba(245, 245, 247, 0.8); */
+
+  --breakpoint-tablet-custom: 834px;
 }
 
 body {
-  color: var(--color-paragraph);
+  color: var(--color-primary);
 }
 
 @layer base {
@@ -57,5 +67,9 @@ body {
 
   h4 {
     @apply tablet-custom:text-[26px] text-[22px] leading-[1.05] tracking-[-0.045em] xl:text-[30px];
+  }
+
+  h5 {
+    @apply text-xs leading-[12px] tracking-[-0.12px] text-black/80;
   }
 }

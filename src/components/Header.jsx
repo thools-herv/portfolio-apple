@@ -1,7 +1,77 @@
+import { ShoppingBagIcon, LensIcon, MainLogo } from "@/Icons";
+import Menubar from "./Menubar";
+import NavLink from "./NavLink";
+
 export default function Header() {
   return (
-    <section className="">
+    <header>
       <h1 className="sr-only">Apple</h1>
-    </section>
+      <div className="bg-background-global fixed top-0 left-0 flex w-full justify-center">
+        <div className="tablet-custom:px-[10px] flex w-full max-w-[1030px] justify-around">
+          <div className="tablet-custom:h-11 tablet-custom:mr-0 tablet-custom:w-11 mr-auto flex h-12 w-12 cursor-pointer items-center justify-center">
+            <MainLogo />
+          </div>
+          <div className="tablet-custom:flex hidden w-full max-w-[868px]">
+            <NavLink />
+          </div>
+          <div className="tablet-custom:h-11 tablet-custom:w-11 flex h-12 w-12 cursor-pointer items-center justify-center">
+            <LensIcon />
+          </div>
+          <div className="tablet-custom:h-11 tablet-custom:w-11 flex h-12 w-12 cursor-pointer items-center justify-center">
+            <ShoppingBagIcon />
+          </div>
+          <div className="tablet-custom:hidden">
+            <Menubar />
+          </div>
+        </div>
+      </div>
+
+      <p className="mt-14 text-[14px]">thools</p>
+      <p className="text-[14px] font-light">
+        Get 3 months of Apple One free with any new iPhone, iPad, or Mac.
+        <span className="absolute mt-[2px] text-[8px] underline">1</span>
+      </p>
+
+      <div>
+        <p>
+          Lorem, ipsum dolor <br /> sit amet <br /> consectetur adipisicing
+          <br /> elit.
+          <br />
+          Exercitationem <br /> aspernatur perspiciatis <br /> non omnis
+          incidunt <br /> facere illo. Odio libero <br /> nulla fuga doloribus
+          <br /> explicabo quidem, <br /> illum, adipisci provident
+          <br /> praesentium aliquid eum ullam?
+        </p>
+        <p>
+          Lorem, ipsum dolor <br /> sit amet <br /> consectetur adipisicing
+          <br /> elit.
+          <br />
+          Exercitationem <br /> aspernatur perspiciatis <br /> non omnis
+          incidunt <br /> facere illo. Odio libero <br /> nulla fuga doloribus
+          <br /> explicabo quidem, <br /> illum, adipisci provident
+          <br /> praesentium aliquid eum ullam?
+        </p>
+        <p>
+          Lorem, ipsum dolor <br /> sit amet <br /> consectetur adipisicing
+          <br /> elit.
+          <br />
+          Exercitationem <br /> aspernatur perspiciatis <br /> non omnis
+          incidunt <br /> facere illo. Odio libero <br /> nulla fuga doloribus
+          <br /> explicabo quidem, <br /> illum, adipisci provident
+          <br /> praesentium aliquid eum ullam?
+        </p>
+        <p>
+          Lorem, ipsum dolor <br /> sit amet <br /> consectetur adipisicing
+          <br /> elit.
+          <br />
+          Exercitationem <br /> aspernatur perspiciatis <br /> non omnis
+          incidunt <br /> facere illo. Odio libero <br /> nulla fuga doloribus
+          <br /> explicabo quidem, <br /> illum, adipisci provident
+          <br /> praesentium aliquid eum ullam?
+        </p>
+      </div>
+    </header>
   );
 }
+
+// bg-background-global
