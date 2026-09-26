@@ -6,9 +6,8 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [tailwindcss(), react()],
-    resolve: {
+  resolve: {
     alias: {
-      // 2. Sabihin na ang '@' ay katumbas ng 'src' folder
       "@": path.resolve(import.meta.dirname, "./src"),
     },
   },

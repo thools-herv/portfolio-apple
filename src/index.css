@@ -23,17 +23,19 @@
 }
 
 @theme {
-  /* --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto,  sans-serif; */
+  /* --font-sans:
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; */
+  /* --tracking-tighter: 0.015em; */
+
   --font-sans: "SF Pro Text", "Inter", sans-serif;
 
   --font-inter: "Inter", sans-serif;
 
   --color-primary: rgb(29, 29, 31);
-  /* rgb(29, 29, 31) */
 
-  --color-accent1: #d2f8dc;
-  --color-accent2: #506349;
-  --color-accent3: #7d9276;
+  --color-accent1: rgb(0, 102, 204);
+  --color-accent2: rgb(0, 113, 227);
+  --color-accent3: rgb(110, 110, 115);
 
   --color-background01: rgb(250, 250, 252);
   --color-background02: #f9f9f9;
@@ -45,7 +47,9 @@
   --color-background-global: rgba(245, 245, 247);
   /* --color-background-global: rgba(245, 245, 247, 0.8); */
 
+  --breakpoint-mobile-landscape: 735px;
   --breakpoint-tablet-custom: 834px;
+  --breakpoint-laptop-custom: 1069px;
 }
 
 body {
@@ -58,18 +62,26 @@ body {
   }
 
   h2 {
-    @apply tablet-custom:text-5xl text-[32px] leading-[1.05] tracking-[-0.07em] xl:text-6xl;
+    @apply mobile-landscape:text-[47px] laptop-custom:text-[56px] text-[32px] leading-none tracking-tighter;
   }
 
   h3 {
-    @apply tablet-custom:text-[34px] text-[28px] leading-[1.05] tracking-[-0.045em] xl:text-[40px];
+    @apply text-[25.5px];
   }
 
   h4 {
-    @apply tablet-custom:text-[26px] text-[22px] leading-[1.05] tracking-[-0.045em] xl:text-[30px];
+    @apply mobile-landscape:text-2xl laptop-custom:text-[28px] text-[19px] tracking-tighter;
   }
 
   h5 {
     @apply text-xs leading-[12px] tracking-[-0.12px] text-black/80;
   }
+
+  h6 {
+    @apply text-accent3 mobile-landscape:text-[17px] tablet-custom:text-[19px] tablet-custom:leading-[22px] text-[14.5px] leading-[18px] font-light tracking-tight whitespace-nowrap;
+  }
 }
+
+/* h2 {
+    @apply mobile-landscape:text-[47px] mobile-landscape:tracking-[-2.2px] mobile-landscape:leading-[1.083] laptop-custom:text-[56px] laptop-custom:leading-[1.071] laptop-custom:tracking-[-3.4px] text-[32px] leading-[1.125] tracking-[-1.8px];
+  } */
