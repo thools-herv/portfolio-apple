@@ -50,6 +50,8 @@
   --breakpoint-mobile-landscape: 735px;
   --breakpoint-tablet-custom: 834px;
   --breakpoint-laptop-custom: 1069px;
+
+  --shadow-border-inset: inset 0 0 0 1px rgb(0, 113, 227);
 }
 
 body {
