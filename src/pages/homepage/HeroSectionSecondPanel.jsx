@@ -17,7 +17,7 @@ export default function HeroSectionSecondPanel() {
             src="/images/hero_iphone_duo_announce__fh4u8yzndpe2_small.jpg"
             alt="iphone duo picture"
             className="h-full w-full object-cover object-center"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </picture>
 

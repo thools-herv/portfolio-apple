@@ -254,7 +254,7 @@ export default function HomepageNavCardsSection() {
               </div>
 
               <p
-                className={`laptop-custom:text-[21px] text-[19px] leading-none font-light ${card.textColor} ${card.title.type === "image" ? "-mt-[14px]" : "-mt-[4px]"} max-w-[250px] tracking-tighter`}
+                className={`laptop-custom:text-[21px] laptop-custom:w-[280px] text-[19px] leading-none font-light ${card.textColor} ${card.title.type === "image" ? "-mt-[14px]" : "-mt-[4px]"} w-[250px] tracking-tighter`}
               >
                 {card.description}
               </p>

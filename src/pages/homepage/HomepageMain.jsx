@@ -1,3 +1,4 @@
+import HomepageEntertaimentSection from "./HomepageEntertaimentSection";
 import HomepageHeroSection from "./HomepageHeroSection";
 import HomepageNavCardsSection from "./HomepageNavCardsSection";
 
@@ -6,6 +7,7 @@ export default function HomepageMain() {
     <main className="">
       <HomepageHeroSection />
       <HomepageNavCardsSection />
+      <HomepageEntertaimentSection />
     </main>
   );
 }

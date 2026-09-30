@@ -38,7 +38,7 @@
   --color-accent3: rgb(110, 110, 115);
 
   --color-background01: rgb(250, 250, 252);
-  --color-background02: #f9f9f9;
+  --color-background02: rgb(245, 245, 247);
   --color-background03: #2e4f21;
   --color-background04: #ffffff;
   --color-background05: #f4f7f5;
@@ -50,6 +50,7 @@
   --breakpoint-mobile-landscape: 735px;
   --breakpoint-tablet-custom: 834px;
   --breakpoint-laptop-custom: 1069px;
+  --breakpoint-desktop-custom: 1441px;
 
   --shadow-border-inset: inset 0 0 0 1px rgb(0, 113, 227);
 }

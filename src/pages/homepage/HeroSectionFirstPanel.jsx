@@ -17,7 +17,7 @@ export default function HeroSectionFirstPanel() {
             src="/images/hero_iphone_18_pro__fqe1motd0ymy_small.jpg"
             alt="iphone 18 pro picture"
             className="h-full w-full object-cover object-center"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </picture>
         <div className="laptop-custom:top-[56px] mobile-landscape:top-[62px] absolute top-[38px] left-1/2 -translate-x-1/2">

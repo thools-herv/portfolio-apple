@@ -17,7 +17,7 @@ export default function HeroSectionThirdPanel() {
             src="/images/hero_apple_watch_series_12__n9rln7bzvwya_small.jpg"
             alt="iphone duo picture"
             className="h-full w-full object-cover object-center"
-            fetchpriority="high"
+            fetchPriority="high"
           />
         </picture>
 
@@ -36,7 +36,7 @@ export default function HeroSectionThirdPanel() {
                 src="/images/hero_logo_apple_watch_series_12__eze8r897c5me_small.png"
                 alt="apple watch series 12 picture"
                 className="h-full w-full object-cover object-center"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </picture>
 
