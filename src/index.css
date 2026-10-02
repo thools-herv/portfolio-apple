@@ -36,6 +36,9 @@
   --color-accent1: rgb(0, 102, 204);
   --color-accent2: rgb(0, 113, 227);
   --color-accent3: rgb(110, 110, 115);
+  --color-accent4: rgba(0, 0, 0, 0.56);
+  --color-accent5: rgba(0, 0, 0, 0.75);
+  --color-accent6: rgba(0, 0, 0, 0.72);
 
   --color-background01: rgb(250, 250, 252);
   --color-background02: rgb(245, 245, 247);

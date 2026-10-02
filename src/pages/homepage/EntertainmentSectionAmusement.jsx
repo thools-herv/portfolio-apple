@@ -229,7 +229,7 @@ const masterData = {
 };
 
 export default function EntertainmentSectionAmusement() {
-  const amusements = [2, 6, 1, 10, 3, 4, 8, 9, 7];
+  const amusements = [2, 6, 1, 10, 3, 4, 8, 7, 9];
   const arrayWithClones = [
     ...amusements.slice(-2),
     ...amusements,
