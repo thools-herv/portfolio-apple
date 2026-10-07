@@ -32,6 +32,7 @@
   --font-inter: "Inter", sans-serif;
 
   --color-primary: rgb(29, 29, 31);
+  --color-secondary: rgba(255, 255, 255, 0.8);
 
   --color-accent1: rgb(0, 102, 204);
   --color-accent2: rgb(0, 113, 227);
@@ -42,8 +43,8 @@
 
   --color-background01: rgb(250, 250, 252);
   --color-background02: rgb(245, 245, 247);
-  --color-background03: #2e4f21;
-  --color-background04: #ffffff;
+  --color-background03: rgba(29, 29, 31, 0.8);
+  --color-background04: rgba(20, 20, 20);
   --color-background05: #f4f7f5;
   --color-background06: #d2f8dc;
 
@@ -80,7 +81,7 @@ body {
   }
 
   h5 {
-    @apply text-xs leading-[12px] tracking-[-0.12px] text-black/80;
+    @apply text-xs;
   }
 
   h6 {

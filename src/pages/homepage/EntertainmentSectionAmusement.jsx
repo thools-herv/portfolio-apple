@@ -285,10 +285,8 @@ export default function EntertainmentSectionAmusement() {
                     <GlobalButton
                       buttonTextLabel={amusement.buttonTextLabel}
                       buttonTextColor="text-black"
-                      buttonTextsize="text-xs laptop-custom:text-sm font-light"
+                      buttonTextSize="text-xs laptop-custom:text-sm font-light"
                       buttonBG={`${isWhiteBg ? "bg-black text-white" : "bg-background02 text-black"}`}
-                      buttonPY="py-[5px]"
-                      buttonPX="px-[10px]"
                     />
                   </div>
                 </div>
@@ -317,10 +315,8 @@ export default function EntertainmentSectionAmusement() {
                       <GlobalButton
                         buttonTextLabel={amusement.buttonTextLabel}
                         buttonTextColor="text-black"
-                        buttonTextsize="text-xs laptop-custom:text-sm font-light"
+                        buttonTextSize="text-xs laptop-custom:text-sm font-light"
                         buttonBG="bg-background02"
-                        buttonPY="py-[5px]"
-                        buttonPX="px-[10px]"
                       />
                     </div>
                   </div>

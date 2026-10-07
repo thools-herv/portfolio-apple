@@ -3,7 +3,8 @@ import GlobalButton from "@/components/GlobalButton";
 export default function HeroSectionFirstPanel() {
   return (
     <section className="">
-      <div className="mobile-landscape:h-[650px] laptop-custom:h-[692px] laptop-custom:mt-[13px] relative mt-[6px] h-[500px]">
+      <div className="tablet-custom:h-11 flex h-12 w-full bg-black"></div>
+      <div className="mobile-landscape:h-[650px] laptop-custom:h-[692px] relative h-[500px]">
         <picture>
           <source
             media="(min-width: 1069px)"
@@ -31,12 +32,18 @@ export default function HeroSectionFirstPanel() {
           </div>
 
           <div className="mobile-landscape:mt-[17px] laptop-custom:mt-[15px] mt-2 flex justify-center gap-4">
-            <GlobalButton buttonTextLabel="Learn more" buttonBG="bg-accent2" />
+            <GlobalButton
+              buttonTextLabel="Learn more"
+              buttonBG="bg-accent2"
+              buttonBorder="border-accent2 border-1"
+              buttonTextSize="text-sm mobile-landscape:text-[17px]"
+            />
             <GlobalButton
               buttonTextLabel="Buy"
               buttonBG="transparent"
               buttonTextColor="text-accent2"
               buttonBorder="border-accent2 border-1"
+              buttonTextSize="text-sm mobile-landscape:text-[17px]"
             />
           </div>
         </div>

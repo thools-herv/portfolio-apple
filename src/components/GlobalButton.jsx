@@ -1,19 +1,19 @@
 export default function GlobalButton({
   buttonTextLabel,
-  buttonWidth = "w-fit",
+
   buttonBG = "bg-darkGreen ",
   buttonTextColor = "text-white",
   buttonBorder,
-  buttonTextsize = "text-[17px]",
-  buttonPX = "px-[16px] ",
-  buttonPY = "py-[7px]",
+  buttonTextSize,
+  buttonPY = "py-[.5em]",
+  buttonPX = "px-[1.2em]",
 }) {
   return (
     <button
-      className={`flex cursor-pointer ${buttonWidth} ${buttonBG} ${buttonTextColor} ${buttonBorder} mobile-landscape:px-[21px] mobile-landscape:py-[8.5px] items-center justify-center rounded-full ${buttonPX} ${buttonPY} `}
+      className={`flex cursor-pointer ${buttonBG} ${buttonTextColor} ${buttonBorder} items-center justify-center rounded-full`}
     >
       <p
-        className={`mobile-landscape:${buttonTextsize} h-fit w-fit items-center ${buttonTextsize}`}
+        className={`h-fit w-fit items-center ${buttonTextSize} ${buttonPX} ${buttonPY}`}
       >
         {buttonTextLabel}
       </p>

@@ -49,12 +49,16 @@ export default function HeroSectionThirdPanel() {
           </div>
 
           <div className="mobile-landscape:mt-[18px] laptop-custom:mt-[24px] mt-3 flex justify-center gap-4">
-            <GlobalButton buttonTextLabel="Learn more" buttonBG="bg-accent2" />
+            <GlobalButton
+              buttonTextLabel="Learn more"
+              buttonBG="bg-accent2"
+              buttonBorder="border-accent2 border-1 text-sm mobile-landscape:text-[17px]"
+            />
             <GlobalButton
               buttonTextLabel="Buy"
               buttonBG="transparent"
               buttonTextColor="text-accent2"
-              buttonBorder="border-accent2 border-1"
+              buttonBorder="border-accent2 border-1 text-sm mobile-landscape:text-[17px]"
             />
           </div>
         </div>

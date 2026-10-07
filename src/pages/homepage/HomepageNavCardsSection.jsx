@@ -263,7 +263,7 @@ export default function HomepageNavCardsSection() {
                 <GlobalButton
                   buttonTextLabel="Learn more"
                   buttonBG="bg-accent2"
-                  buttonTextsize="text-sm"
+                  buttonTextSize="text-sm"
                 />
 
                 <div className={`${card.id === 5 ? "hidden" : "block"}`}>
@@ -272,7 +272,7 @@ export default function HomepageNavCardsSection() {
                     buttonBG="transparent"
                     buttonTextColor="text-accent2"
                     buttonBorder="shadow-border-inset"
-                    buttonTextsize="text-sm"
+                    buttonTextSize="text-sm"
                   />
                 </div>
               </div>

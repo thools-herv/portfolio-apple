@@ -358,7 +358,7 @@ export default function EntertainmentSectionTvShow() {
                     buttonTextLabel="Stream now"
                     buttonBG="bg-white"
                     buttonTextColor="text-black"
-                    buttonTextsize="text-[14px] laptop-custom:text-[17px] "
+                    buttonTextSize="text-sm laptop-custom:text-[17px]"
                   />
                 </div>
               )}
@@ -368,6 +368,7 @@ export default function EntertainmentSectionTvShow() {
                     buttonTextLabel="F1 on Apple TV"
                     buttonBG="bg-white"
                     buttonTextColor="text-black"
+                    buttonTextSize="text-sm laptop-custom:text-[17px]"
                   />
                 </div>
               )}
@@ -377,6 +378,7 @@ export default function EntertainmentSectionTvShow() {
                     buttonTextLabel="MLS on Apple TV"
                     buttonBG="bg-white"
                     buttonTextColor="text-black"
+                    buttonTextSize="text-sm laptop-custom:text-[17px]"
                   />
                 </div>
               )}
