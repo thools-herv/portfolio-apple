@@ -45,7 +45,7 @@
   --color-background02: rgb(245, 245, 247);
   --color-background03: rgba(29, 29, 31, 0.8);
   --color-background04: rgba(20, 20, 20);
-  --color-background05: #f4f7f5;
+  --color-background05: rgba(120, 120, 120);
   --color-background06: #d2f8dc;
 
   --color-background-global: rgba(245, 245, 247);
@@ -92,3 +92,12 @@ body {
 /* h2 {
     @apply mobile-landscape:text-[47px] mobile-landscape:tracking-[-2.2px] mobile-landscape:leading-[1.083] laptop-custom:text-[56px] laptop-custom:leading-[1.071] laptop-custom:tracking-[-3.4px] text-[32px] leading-[1.125] tracking-[-1.8px];
   } */
+
+@keyframes slide {
+  from {
+    width: 25%;
+  }
+  to {
+    width: 100%;
+  }
+}

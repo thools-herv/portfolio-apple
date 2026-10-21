@@ -7,7 +7,7 @@ import PreFooter from "@/components/PreFooter";
 export default function Homepage() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <HomepageMain />
       <PreFooter />
       <Footer />

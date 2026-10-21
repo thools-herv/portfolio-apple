@@ -1,5 +1,7 @@
 import GlobalButton from "@/components/GlobalButton";
 import { ArcadeIcon, FitnessIcon, MusicIcon } from "@/Icons";
+import { useRef } from "react";
+import { useCarouselControl } from "@/components/CarouselControl";
 
 const masterData = {
   1: {
@@ -228,16 +230,174 @@ const masterData = {
   },
 };
 
-export default function EntertainmentSectionAmusement() {
+export default function EntertainmentSectionAmusement({
+  activeDot,
+  setActiveDot,
+  slideTimer,
+
+  isPlay,
+  setIsPlay,
+
+  isPlayActive,
+  setIsPlayActive,
+
+  gap,
+
+  setIsSlidingTop,
+
+  setIsSlidingBottom,
+  isSlidingBottom,
+
+  isSlideLeft,
+  setIsSlideLeft,
+}) {
   const amusements = [2, 6, 1, 10, 3, 4, 8, 7, 9];
   const arrayWithClones = [
-    ...amusements.slice(-2),
+    ...amusements.slice(-3),
     ...amusements,
-    ...amusements.slice(0, 2),
+    ...amusements.slice(0, 3),
   ];
+
+  // const [isSliding, setIsSliding] = useState(true);
+  const containerRef = useCarouselControl({
+    activeDot,
+    slideTimer,
+    isPlay,
+    gap,
+
+    setIsSlidingBottom,
+    isSlidingBottom,
+
+    isSlideLeft,
+    setIsSlideLeft,
+  });
+
+  const scrollTimeoutRef = useRef(null);
+  const isInteracting = useRef(false);
+  const startDotRef = useRef(0);
+
+  const handleInteractionStart = () => {
+    isInteracting.current = true;
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+
+    startDotRef.current = container.scrollLeft;
+    setIsPlay(false);
+    setIsSlidingTop(false);
+    setIsSlidingBottom(true);
+  };
+
+  const handleInteractionEnd = () => {
+    isInteracting.current = false;
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+
+    setTimeout(() => {
+      if (
+        startDotRef.current === container.scrollLeft &&
+        isPlayActive === true
+      ) {
+        setIsPlay(true);
+
+        setIsSlidingTop(false);
+        setIsSlidingBottom(false);
+      } else {
+        setIsPlayActive(false);
+      }
+    }, 250);
+  };
+
+  // slide -----------------------------------------------
+  const handleScroll = () => {
+    if (!isSlidingBottom) return;
+    if (!containerRef.current) return;
+    const container = containerRef.current;
+
+    const firstRealCard = Array.from(container.children).filter(
+      (child) => child.dataset.clone === "false",
+    );
+
+    const arrayMenu = firstRealCard.length;
+
+    if (firstRealCard) {
+      const containerWidth = container.offsetWidth;
+      const cardWidth = firstRealCard[0].offsetWidth;
+      const fullCardLength = cardWidth + gap;
+
+      const hideSpaceWidth =
+        fullCardLength - (containerWidth / 2 - cardWidth / 2);
+
+      const totalSpace = container.scrollLeft - hideSpaceWidth;
+
+      const computedActiveDot = totalSpace / fullCardLength;
+      const activeDotTemp = Math.floor(computedActiveDot) - 2;
+
+      setActiveDot(activeDotTemp);
+
+      clearTimeout(scrollTimeoutRef.current);
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        setTimeout(() => {
+          if (startDotRef.current === 0) return;
+          if (startDotRef.current !== container.scrollLeft) {
+            setIsPlay(false);
+            setIsSlidingTop(false);
+            setIsSlidingBottom(true);
+            // console.log("not the same------ in amusement");
+          }
+        }, 250);
+
+        if (activeDotTemp < 0) {
+          setActiveDot(arrayMenu - 1);
+          setIsSlideLeft(true);
+
+          const activeCard = firstRealCard[arrayMenu - 1];
+          const activeCardWidth = activeCard.offsetWidth + gap;
+          const activeCardLeft = activeCard.offsetLeft;
+
+          const targetScrollLeft =
+            activeCardLeft - containerWidth / 2 + activeCardWidth / 2;
+
+          container.scrollTo({
+            left: targetScrollLeft,
+            behavior: "auto",
+          });
+        }
+
+        if (activeDotTemp === arrayMenu) {
+          setActiveDot(0);
+
+          const activeCard = firstRealCard[0];
+          const activeCardWidth = activeCard.offsetWidth + gap;
+          const activeCardLeft = activeCard.offsetLeft;
+
+          const targetScrollLeft =
+            activeCardLeft - containerWidth / 2 + activeCardWidth / 2;
+
+          container.scrollTo({
+            left: targetScrollLeft,
+            behavior: "auto",
+          });
+        }
+      }, 250);
+    }
+  };
+
+  // console.log(activeDot + " active dot outside");
+  // console.log(activeDot + " active dot in amusement");
+
   return (
     <section className="mt-3">
-      <div className="flex w-full snap-x snap-mandatory scrollbar-none gap-3 overflow-x-auto scroll-smooth">
+      <div
+        ref={containerRef}
+        onScroll={handleScroll}
+        onTouchStart={handleInteractionStart}
+        onTouchEnd={handleInteractionEnd}
+        onMouseDown={handleInteractionStart}
+        onMouseUp={handleInteractionEnd}
+        onMouseLeave={handleInteractionEnd}
+        className="flex w-full snap-x snap-mandatory scrollbar-none gap-3 overflow-x-auto"
+      >
         {arrayWithClones.map((id, index) => {
           const amusement = masterData[id];
           if (!amusement) return null;
@@ -245,16 +405,18 @@ export default function EntertainmentSectionAmusement() {
           const GenreIcon = amusement.genre;
           const isWhiteBg = amusement.bgColor === "bg-[#FFFFFF]";
 
-          const isCloneAhead = index < 2;
-          const isCloneBehind = index >= amusements.length + 2;
-          const isClone = isCloneAhead || isCloneBehind;
+          const isOuterEdge =
+            index === 0 || index === arrayWithClones.length - 1;
 
           return (
             <div
               key={`${id}-${index}`}
-              className={`laptop-custom:w-[417px] laptop-custom:h-[234px] desktop-custom:w-[470px] desktop-custom:h-[264px] relative flex h-[254px] w-[188px] flex-shrink-0 ${amusement.bgColor || "bg-white"} ${
-                isClone ? "" : "snap-center"
-              }`}
+              data-clone={
+                index < 3 || index >= arrayWithClones.length - 3
+                  ? "true"
+                  : "false"
+              }
+              className={`laptop-custom:w-[417px] laptop-custom:h-[234px] desktop-custom:w-[470px] card-base-styles desktop-custom:h-[264px] relative flex h-[254px] w-[188px] flex-shrink-0 ${amusement.bgColor || "bg-white"} ${!isOuterEdge ? "snap-center" : ""}`}
             >
               {GenreIcon === MusicIcon ? (
                 <div className="flex w-full">

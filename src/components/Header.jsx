@@ -67,7 +67,7 @@ export default function Header() {
       </div>
 
       <div ref={menuRef} className="tablet-custom:hidden">
-        <div className="absolute top-0 right-0 z-200">
+        <div className="fixed top-0 right-0 z-200">
           <div
             onClick={() => setIsOpen(!isOpen)}
             className="relative flex h-12 w-12 cursor-pointer items-center justify-center"
