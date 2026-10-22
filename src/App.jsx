@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/homepage/Homepage";
-import TemporaryPage from "./pages/temporarypage/TemporaryPage";
 
 const router = createBrowserRouter([
   {
@@ -8,10 +7,7 @@ const router = createBrowserRouter([
     element: <Homepage />,
   },
 
-  {
-    path: "/temporary",
-    element: <TemporaryPage />,
-  },
+  {},
 ]);
 
 export default function App() {

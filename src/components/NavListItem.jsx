@@ -1,6 +1,5 @@
 import NavLinkHover from "./NavLinkHover";
 
-// 1. DATA CONFIGURATION: Ipunin dito lahat ng impormasyon ng mga panel.
 const hoverMenusConfig = {
   storeHover: {
     titles: {
@@ -399,7 +398,6 @@ export function NavHoverMenu({ category }) {
   const currentMenu = hoverMenusConfig[category];
 
   if (!currentMenu) return null;
-  // if (!currentMenu.subTitles) return;
 
   return (
     <NavLinkHover

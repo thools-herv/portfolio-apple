@@ -8,14 +8,11 @@ export default function Header() {
 
   useEffect(() => {
     if (isOpen) {
-      // Itatago ang scroll ng buong page
       document.body.classList.add("overflow-hidden");
     } else {
-      // Ibabalik ang scroll kapag sinara
       document.body.classList.remove("overflow-hidden");
     }
 
-    // Cleanup function: Siguradong mababalik sa normal kapag nag-unmount ang component
     return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
 
@@ -33,8 +30,6 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
-  // console.log(isOpen);
-
   return (
     <header>
       <h1 className="sr-only">Apple</h1>
@@ -46,7 +41,7 @@ export default function Header() {
           >
             <MainLogo />
           </div>
-          <div className="tablet-custom:flex hidden w-full max-w-[868px]">
+          <div className="tablet-custom:flex hidden w-full max-w-[868px] whitespace-nowrap">
             <NavLink
               layout="flex h-full items-center justify-around"
               attribute="font-inter text-[11.2px] font-thin tracking-wide text-white antialiased"

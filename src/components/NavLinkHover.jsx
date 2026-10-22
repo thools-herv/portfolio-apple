@@ -11,7 +11,6 @@ export default function NavLinkHover({
   thirdPanel,
 }) {
   const wrapperClass = firstPanelsubTitleFirst ? "grid gap-1.5 pt-5" : "";
-  // if (!firstPanelsubTitleFirst) return null;
 
   return (
     <section className="w-full">

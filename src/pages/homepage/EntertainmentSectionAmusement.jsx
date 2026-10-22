@@ -258,7 +258,6 @@ export default function EntertainmentSectionAmusement({
     ...amusements.slice(0, 3),
   ];
 
-  // const [isSliding, setIsSliding] = useState(true);
   const containerRef = useCarouselControl({
     activeDot,
     slideTimer,
@@ -343,7 +342,6 @@ export default function EntertainmentSectionAmusement({
             setIsPlay(false);
             setIsSlidingTop(false);
             setIsSlidingBottom(true);
-            // console.log("not the same------ in amusement");
           }
         }, 250);
 
@@ -382,9 +380,6 @@ export default function EntertainmentSectionAmusement({
       }, 250);
     }
   };
-
-  // console.log(activeDot + " active dot outside");
-  // console.log(activeDot + " active dot in amusement");
 
   return (
     <section className="mt-3">

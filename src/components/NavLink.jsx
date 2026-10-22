@@ -59,9 +59,7 @@ export default function NavLink({ layout, attribute, positioning, isOpen }) {
     { id: 10, title: "Accessories", subMenu: "accessoriestHover" },
     { id: 11, title: "Support", subMenu: "supportHover" },
   ];
-  // console.log(isOpen);
-  // console.log(activeMenu);
-  // console.log(activeTabName);
+
   return (
     <section className="w-full" onMouseLeave={handleMouseLeaveNavbar}>
       <ul className={`${layout}`}>

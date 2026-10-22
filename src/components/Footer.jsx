@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DropArrow from "./DropArrow";
 import {
   aboutappleListNavs,
@@ -35,31 +36,59 @@ export default function Footer() {
     "Legal",
     "Site Map",
   ];
+
+  const [isElementOpen, setIsElementOpen] = useState({});
+
+  const handleClickFooter = (id) => {
+    setIsElementOpen((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <footer className="bg-background-global flex w-full flex-col items-center justify-center">
-      <div className="tablet-custom:px-[22px] w-full px-4 min-[1024px]:max-w-[1024px]">
+      <div className="tablet-custom:px-[22px] tablet-custom:h-[460px] tablet-custom:columns-5 tablet-custom:[column-gap:18px] tablet-custom:[column-fill:auto] h-auto w-full px-4 min-[1024px]:max-w-[1024px]">
         {FooterLinks?.map((link) => {
+          const isVisible = isElementOpen[link.id];
           return (
-            <div key={link.id} className="w-full">
+            <div
+              key={link.id}
+              onClick={() => handleClickFooter(link.id)}
+              className="w-full cursor-pointer"
+              style={{
+                height: link.height,
+                breakInside: "avoid",
+              }}
+            >
               <div className="flex items-center justify-between py-[10px]">
                 <h3 className="text-accent5 text-[13px] font-medium">
                   {link.title}
                 </h3>
-                <DropArrow />
+                <DropArrow activeElement={isVisible} />
               </div>
 
               {/* footer list navs ------------------------ */}
+
               {link.listnavs && link.listnavs.length > 0 && (
-                <ul className="tablet-custom:hidden hidden space-y-1.5 border pb-2">
-                  {link.listnavs.map((list, index) => (
-                    <li
-                      key={index}
-                      className="text-[12px] font-light text-gray-500"
-                    >
-                      {list.title}
-                    </li>
-                  ))}
-                </ul>
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isVisible
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  } tablet-custom:grid-rows-[1fr] tablet-custom:opacity-100 overflow-hidden`}
+                >
+                  <ul className="min-h-0 space-y-1.5 pb-2">
+                    {link.listnavs.map((list, index) => (
+                      <li
+                        key={index}
+                        className="text-[12px] font-light text-gray-500"
+                      >
+                        {list.title}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
               <hr className="tablet-custom:hidden border-black/20" />

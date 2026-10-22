@@ -51,7 +51,3 @@ export default function HeroSectionFirstPanel() {
     </section>
   );
 }
-
-// <p className="mobile-landscape:text-2xl laptop-custom:text-[28px] laptop-custom:mt-[6px] mobile-landscape:mt-[2px] laptop-custom:tracking-[-1.6px] mt-[5px] text-[19px] leading-[1.210] tracking-[-0.8px] text-white">
-//   Pro further.
-// </p>

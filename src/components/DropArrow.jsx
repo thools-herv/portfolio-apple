@@ -1,31 +1,20 @@
-import { useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
-export default function DropArrow() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Gumawa ng refs para sa dalawang animate tags
+export default function DropArrow({ activeElement }) {
   const expandAnimRef = useRef(null);
   const collapseAnimRef = useRef(null);
 
-  const toggleDropdown = () => {
-    if (!isOpen) {
-      // Kung bubuksan, i-trigger ang expand animation
+  useEffect(() => {
+    if (activeElement) {
       expandAnimRef.current?.beginElement();
     } else {
-      // Kung isasarado, i-trigger ang collapse animation
       collapseAnimRef.current?.beginElement();
     }
-    setIsOpen(!isOpen);
-  };
+  }, [activeElement]);
 
   return (
     <div className="tablet-custom:hidden flex flex-col items-center justify-center">
-      {/* Button na nagpapakita ng SVG Icon */}
-      <button
-        onClick={toggleDropdown}
-        className="flex cursor-pointer items-center text-sm font-medium text-black"
-      >
-        {/* Ang iyong SVG na may Tailwind Classes */}
+      <button className="flex cursor-pointer items-center text-sm font-medium text-black">
         <svg className="" width="11" height="6" viewBox="0 0 11 6">
           <polyline
             stroke="currentColor"
@@ -35,7 +24,6 @@ export default function DropArrow() {
             fillRule="evenodd"
             points="10.075 0.675 5.5 5.323 0.925 0.675"
           >
-            {/* Expand Animation */}
             <animate
               ref={expandAnimRef}
               attributeName="points"
@@ -47,7 +35,7 @@ export default function DropArrow() {
               calcMode="spline"
               keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1"
             />
-            {/* Collapse Animation */}
+
             <animate
               ref={collapseAnimRef}
               attributeName="points"
@@ -62,9 +50,6 @@ export default function DropArrow() {
           </polyline>
         </svg>
       </button>
-
-      {/* Placeholder content para makita kung bumubukas */}
-      {isOpen && <div className=""></div>}
     </div>
   );
 }

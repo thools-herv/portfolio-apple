@@ -55,7 +55,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to see the l
 
 ## 💡 Developer's Note
 
-This project is built for educational and practice purposes only. It demonstrates my skills in converting design concepts into clean, working React code.
+This project is built for educational and practice purposes only. It demonstrates my skills into clean, working React code.
 
 ---
 
@@ -63,8 +63,5 @@ This project is built for educational and practice purposes only. It demonstrate
 
 This project was built as a code implementation of a professional UI design.
 
-- **Original Design:** [Sweet Flower Shop](https://www.figma.com/community/file/1497437463361122374/sweet-flower-shop) by **Figma Community**
-
-
-- **My Figma Workspace:** [View my copied file](https://www.figma.com/site/MCNPDWlflhouXnDYmKNIvJ/Sweet-Flower-Shop--Community-?node-id=0-1&t=XlCd7VQ6PKsnK0vy-1)
-  _(Feel free to inspect the responsive layouts used for development)_
+- **Original Design:**
+  https://www.apple.com/

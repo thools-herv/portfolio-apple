@@ -312,7 +312,6 @@ export default function EntertainmentSectionTvShow({
     // },
   ];
 
-  // const [isSliding, setIsSliding] = useState(true);
   const containerRef = useCarouselControl({
     activeDot,
     setActiveDot,
