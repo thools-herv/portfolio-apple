@@ -23,11 +23,11 @@
 }
 
 @theme {
-  /* --font-sans:
-    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; */
-  /* --tracking-tighter: 0.015em; */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  --tracking-tighter: 0.015em;
 
-  --font-sans: "SF Pro Text", "Inter", sans-serif;
+  /* --font-sans: "SF Pro Text", "Inter", sans-serif; */
 
   --font-inter: "Inter", sans-serif;
 
